@@ -1,0 +1,29 @@
+{
+  "name": "murph-yas-family",
+  "private": true,
+  "description": "Tracking the monthly murph of Yasers",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build && gh-pages -d public -b public"
+  },
+  "dependencies": {
+    "ascii-table": "0.0.9",
+    "gatsby": "^2.23.12",
+    "gatsby-source-filesystem": "^2.3.14",
+    "gatsby-transformer-csv": "^2.3.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0",
+    "prettier": "2.0.5"
+  }
+}
