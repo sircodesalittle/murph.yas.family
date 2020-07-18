@@ -35,7 +35,7 @@ export default IndexComponent
 
 export const IndexQuery = graphql`
 query {
-  allMurphs {
+  allMurphs(sort: {fields: parent___id}) {
     nodes {
       results {
         name
