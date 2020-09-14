@@ -1,9 +1,5 @@
 .rainbow {
-    text-align: center;
-    text-decoration: underline;
-    font-size: 32px;
-    font-family: monospace;
-    letter-spacing: 5px;
+    text-align: center
 }
 
 .rainbow_text_animated {

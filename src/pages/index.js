@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
 import "./styles.css"
+import Layout from "../components/layout"
 var AsciiTable = require('ascii-table')
 
 class IndexComponent extends React.Component {
@@ -20,14 +21,19 @@ class IndexComponent extends React.Component {
     });
     
     return (
-      <div>
-          <h1 class="rainbow rainbow_text_animated">Next YAS Murph - 7:00 AM September 19 @ Alex's </h1>
-          <div style={{textAlign: 'center'}}><a href="spotify:playlist:0UAPiXhYnNrndtZpEzPLjX">Spotify Playlist</a></div>
-          <pre style={{textAlign: 'center'}}>Results:</pre>
-          {murphTables.map((table, i) => (
-            <pre style={{textAlign: 'center'}} key={i}>{table.toString()}</pre>
-          ))}
-      </div>
+      <Layout>
+          <section className="padtop">
+            <space className="x-large"></space>
+            <div className="content">
+            <h1 class="headline-1 rainbow rainbow_text_animated">Next YAS Murph - 7:00 AM September 19 @ Alex's</h1>
+            
+            <pre style={{textAlign: 'center'}}>Results:</pre>
+            {murphTables.map((table, i) => (
+              <pre style={{textAlign: 'center'}} key={i}>{table.toString()}</pre>
+            ))}
+            </div>
+          </section>
+      </Layout>
     )
   }
 }
