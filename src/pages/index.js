@@ -21,7 +21,7 @@ class IndexComponent extends React.Component {
     
     return (
       <div>
-          <h1 class="rainbow rainbow_text_animated">Next YAS Murph - 7:00 AM August 8 @ Alex's </h1>
+          <h1 class="rainbow rainbow_text_animated">Next YAS Murph - 7:00 AM September 19 @ Alex's </h1>
           <div style={{textAlign: 'center'}}><a href="spotify:playlist:0UAPiXhYnNrndtZpEzPLjX">Spotify Playlist</a></div>
           <pre style={{textAlign: 'center'}}>Results:</pre>
           {murphTables.map((table, i) => (
