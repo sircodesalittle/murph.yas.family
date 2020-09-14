@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
+    "deploy": "gatsby build && echo 'murph.yas.family' > public/CNAME &&  gh-pages -d public -b gh-pages"
   },
   "dependencies": {
     "ascii-table": "0.0.9",
