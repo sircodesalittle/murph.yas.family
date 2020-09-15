@@ -5,7 +5,6 @@ class Results extends Component {
 
     }
     render() {
-      const { results } = this.props 
     return (
       <div>
         <h1>Results</h1>
