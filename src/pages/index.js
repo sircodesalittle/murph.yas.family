@@ -2,6 +2,7 @@ import { graphql } from "gatsby"
 import React from "react"
 import "./styles.css"
 import Layout from "../components/layout"
+import MurphChart from "../components/MurphChart"
 
 class IndexComponent extends React.Component {
   render() {
@@ -42,6 +43,7 @@ class IndexComponent extends React.Component {
             <div className="content">
             <h1 class="headline-1 rainbow rainbow_text_animated">Next YAS Murph - 7:00 AM September 19 @ Alex's</h1>
             
+            <MurphChart murphs={murphs}></MurphChart>
             <h2 style={{textAlign: 'center'}}>Results:</h2>
             {murphTables}
             </div>
