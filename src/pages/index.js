@@ -1,23 +1,33 @@
 import { graphql } from "gatsby"
+import { withPrefix } from 'gatsby';
 import React from "react"
 import "./styles.css"
 import Layout from "../components/layout"
 import MurphChart from "../components/MurphChart"
+
 
 class IndexComponent extends React.Component {
   render() {
     const murphs = this.props.data.allMurphs.nodes
     var murphTables = []
 
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+
     murphs.forEach(murph => {
       murphTables.push((
         <div className="card">
-          <div className="card-head">
-            <p className="card-head-title">
-              {new Date(Date.parse(murph.parent.name + "T16:11:20.019Z")).toDateString()}
-            </p>
-          </div>
         
+          <div class="card-container">
+              <div class="card-image" style={{backgroundImage: `url(${withPrefix('/img/' + murph.parent.name + '.jpg')})`, backgroundPosition: '50% 0'}}></div>
+
+              <div class="title-container">
+                  <p class="title">{monthNames[new Date(Date.parse(murph.parent.name + "T16:11:20.019Z")).getMonth()]}</p>
+                  <span class="subtitle">{new Date(Date.parse(murph.parent.name + "T16:11:20.019Z")).toDateString()}</span>
+              </div>
+          </div>
           <div className="content">
             <table class="table">
               <thead>
@@ -41,7 +51,7 @@ class IndexComponent extends React.Component {
           <section className="padtop">
             <space className="x-large"></space>
             <div className="content">
-            <h1 class="headline-1 rainbow rainbow_text_animated">Next YAS Murph - 7:00 AM September 19 @ Alex's</h1>
+            <h1 class="headline-1 rainbow rainbow_text_animated">Next YAS Murph - 7:00 AM October 17 @ Alex's</h1>
             
             <MurphChart murphs={murphs}></MurphChart>
             <h2 style={{textAlign: 'center'}}>Results:</h2>
