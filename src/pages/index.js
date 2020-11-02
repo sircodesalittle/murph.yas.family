@@ -9,6 +9,11 @@ import MurphChart from "../components/MurphChart"
 class IndexComponent extends React.Component {
   render() {
     const murphs = this.props.data.allMurphs.nodes
+    // Sort these bad boys
+    murphs.sort(function(a,b){
+      return new Date(Date.parse(b.parent.name + "T16:11:20.019Z")) - new Date(Date.parse(a.parent.name + "T16:11:20.019Z"));
+    })
+    console.log(murphs)
     var murphTables = []
 
     const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -51,7 +56,7 @@ class IndexComponent extends React.Component {
           <section className="padtop">
             <space className="x-large"></space>
             <div className="content">
-            <h1 class="headline-1 rainbow rainbow_text_animated">Next YAS Murph - 7:00 AM October 17 @ Alex's</h1>
+            <h1 class="headline-1 rainbow rainbow_text_animated">Next YAS Murph - 7:30 AM November 14 @ Alex's</h1>
             
             <MurphChart murphs={murphs}></MurphChart>
             <h2 style={{textAlign: 'center'}}>Results:</h2>
@@ -67,7 +72,7 @@ export default IndexComponent
 
 export const IndexQuery = graphql`
 query {
-  allMurphs(sort: {fields: parent___id}) {
+  allMurphs(sort: {fields: id}) {
     nodes {
       results {
         name

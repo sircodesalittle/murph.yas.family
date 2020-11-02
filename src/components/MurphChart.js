@@ -20,6 +20,8 @@ import {
 function MurphChart(props) {
     const murphs = props.murphs
 
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+
     let series = [];
     const colors = [
         "red",
@@ -47,7 +49,7 @@ function MurphChart(props) {
     let murphData = []
     murphs.map((murph, murphIndex) => {
         let seriesData = {
-            name: new Date(Date.parse(murph.parent.name + "T16:11:20.019Z")).toDateString(),
+            name: monthNames[new Date(Date.parse(murph.parent.name + "T16:11:20.019Z")).getMonth()],
         };
         murph.results.map((entry, entryIndex) => {
             let time = entry.time.split(':')
